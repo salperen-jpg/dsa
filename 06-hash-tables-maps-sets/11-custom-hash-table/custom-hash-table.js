@@ -36,7 +36,7 @@ class HashTable {
     const index = this._hash(key, this.capacity);
     if (this.bucket[index] === undefined) return undefined;
     for (let i = 0; i < this.bucket[index].length; i++) {
-      if ((this.bucket[index][i].key = key)) return this.bucket[index][i].value;
+      if (this.bucket[index][i].key === key) return this.bucket[index][i].value;
     }
   }
 
@@ -67,8 +67,9 @@ class HashTable {
 const hash = new HashTable(5);
 hash.set("alp", 1234567889);
 hash.set("lap", 987);
-hash.set("ilker", 1234567889);
+hash.set("ilker", 12345678890);
 hash.set("ece", 1234567889);
+console.log(hash.get("lap"));
 hash.size();
-hash.print();
+// hash.print();
 module.exports = HashTable;
