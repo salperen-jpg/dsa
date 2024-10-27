@@ -23,6 +23,7 @@ class HashTable {
       for (let i = 0; i < this.bucket[index]; i++) {
         if (this.bucket[index][i].key === key) {
           this.bucket[index][i].key = value;
+          isInserted = true;
         }
       }
       if (isInserted === false) {
